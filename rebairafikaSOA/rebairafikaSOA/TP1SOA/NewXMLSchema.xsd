@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/NewXMLSchema" xmlns:tns="http://www.example.org/NewXMLSchema" elementFormDefault="qualified">
+
+
+
+
+    
+
+    <attribute name="id" type="string"></attribute>
+
+    <attribute name="type" type="string"></attribute>
+
+    <element name="film" type="string"></element>
+
+
+    
+    <complexType name="film">
+    	<sequence>
+    		<element name="titre" type="string"></element>
+    		<element name="année" type="string"></element>
+    		<element name="realisation" type="string"></element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    	<attribute name="type" type="string"></attribute>
+    </complexType>
+
+    <complexType name="producteur">
+    	<sequence>
+    		<element name="nom" type="string"></element>
+    		<element name="film" type="tns:film"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="annee" type="string"></element>
+
+    <element name="nom" type="string"></element>
+
+    <element name="producteur" type="string"></element>
+
+    <element name="realisation" type="string"></element>
+
+    <element name="titre" type="string"></element>
+
+    <element name="film" type="string"></element>
+
+
+
+    <complexType name="cinemq">
+    	<sequence>
+    		<element name="film" type="tns:film"></element>
+    		<element name="producteur" type="tns:producteur"></element>
+    	</sequence>
+    </complexType>
+</schema>
